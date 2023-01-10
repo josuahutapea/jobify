@@ -33,7 +33,7 @@ class AppliedScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Column(
                       children: [
-                        const SizedBox(height: 30),
+                        const SizedBox(height: 16),
                         Row(
                           children: [
                             Text(
