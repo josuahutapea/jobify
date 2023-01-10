@@ -16,3 +16,17 @@ const String discordDescription =
     'Junior UI Designer needed, for redesign many page in discord web, desktop and mobile app so the app can work good';
 const String discordDescription2 =
     'Tech Lead needed, for managing web, desktop and mobile app';
+
+const List<String> responsibilities = [
+  'Collaborate with product manager and teach throughout the design life-cycle such as product wireframes',
+  'Design new product, new interfaces and experience.',
+  'Create a design theme that promotes a strong brand affiliation.',
+  'Hands-on experience with creating short videos and editing',
+];
+
+const List<String> requirements = [
+  'On-site in California',
+  'Have good communication skills and team working skill.',
+  'Know the principal of animation and you can create high quality prototypes.',
+  'Figma, Xd & Sketch know about this app.',
+];
