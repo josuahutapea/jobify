@@ -3,8 +3,29 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'custom_theme.dart';
 
-class JobCard extends StatefulWidget {
-  const JobCard({
+enum Status {
+  Pending,
+  Approved,
+  Rejected,
+}
+
+extension StatusExtension on Status {
+  Color get color {
+    switch (this) {
+      case Status.Pending:
+        return const Color(0xffFFC757);
+      case Status.Approved:
+        return const Color(0xff4CD963);
+      case Status.Rejected:
+        return const Color(0xffFF6E47);
+      default:
+        return Colors.grey;
+    }
+  }
+}
+
+class JobCardApplied extends StatefulWidget {
+  const JobCardApplied({
     Key? key,
     required this.company,
     required this.logo,
@@ -12,10 +33,11 @@ class JobCard extends StatefulWidget {
     required this.location,
     required this.salary,
     required this.description,
+    required this.status,
   }) : super(key: key);
 
   @override
-  State<JobCard> createState() => _JobCardState();
+  State<JobCardApplied> createState() => _JobCardAppliedState();
 
   final String company;
   final String logo;
@@ -23,9 +45,10 @@ class JobCard extends StatefulWidget {
   final String location;
   final String salary;
   final String description;
+  final Status status;
 }
 
-class _JobCardState extends State<JobCard> {
+class _JobCardAppliedState extends State<JobCardApplied> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -76,18 +99,20 @@ class _JobCardState extends State<JobCard> {
                 ],
               ),
               const Spacer(),
-              Material(
-                color: Colors.transparent,
-                shape: const CircleBorder(),
-                clipBehavior: Clip.hardEdge,
-                child: IconButton(
-                  icon: const ImageIcon(
-                    AssetImage('assets/bookmark.png'),
-                    color: grey,
-                  ),
-                  onPressed: () {},
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                decoration: BoxDecoration(
+                  color: widget.status.color.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(4),
                 ),
-              ),
+                child: Text(
+                  widget.status.name,
+                  style: GoogleFonts.plusJakartaSans(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                      color: widget.status.color),
+                ),
+              )
             ],
           ),
           const SizedBox(height: 20),

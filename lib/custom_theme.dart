@@ -13,4 +13,6 @@ const Color orange = Color(0xffF59A74);
 const String pinterestDescription =
     'Senior UI/UX Designer needed, for collaborate with team and developer as full time designer. by having good communication skills,';
 const String discordDescription =
-    'Junior UI Designer needed needed, for redesign many page in discord web, desktop and mobile app so';
+    'Junior UI Designer needed, for redesign many page in discord web, desktop and mobile app so the app can work good';
+const String discordDescription2 =
+    'Tech Lead needed, for managing web, desktop and mobile app';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobify/applied_screen.dart';
 import 'package:jobify/custom_theme.dart';
 import 'package:jobify/home_screen.dart';
 
@@ -17,7 +18,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
     const HomeScreen(),
     Container(color: Colors.yellow),
-    Container(color: Colors.green),
+    const AppliedScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.purple),
   ];
